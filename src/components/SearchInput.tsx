@@ -29,6 +29,3 @@ const SearchInput = ({ onSearch }: Props) => {
 };
 
 export default SearchInput;
-function useRef<T>(arg0: null) {
-  throw new Error("Function not implemented.");
-}
