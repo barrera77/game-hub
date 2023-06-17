@@ -27,6 +27,7 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
           </MenuItem>
         ))}
       </MenuList>
+      
     </Menu>
   );
 };
