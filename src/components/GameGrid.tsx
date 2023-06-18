@@ -1,4 +1,4 @@
-import { Button, SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, Button, SimpleGrid, Text } from "@chakra-ui/react";
 import { GameQuery } from "../App";
 import useGames from "../hooks/useGames";
 import GameCard from "./GameCard";
@@ -24,12 +24,8 @@ const GameGrid = ({ gameQuery }: Props) => {
   if (error) return <Text>{error.message}</Text>;
 
   return (
-    <>
-      <SimpleGrid
-        columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
-        padding="10px"
-        spacing={6}
-      >
+    <Box padding="10px">
+      <SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 4 }} spacing={6}>
         {isLoading &&
           skeletons.map((skeleton) => (
             <GameCardContainer key={skeleton}>
@@ -47,11 +43,11 @@ const GameGrid = ({ gameQuery }: Props) => {
         ))}
       </SimpleGrid>
       {hasNextPage && (
-        <Button onClick={() => fetchNextPage}>
+        <Button onClick={() => fetchNextPage()} marginY={5}>
           {isFetchingNextPage ? "loading..." : "Load More"}
         </Button>
       )}
-    </>
+    </Box>
   );
 };
 
